@@ -97,6 +97,8 @@
 						<!-- exhibits -->
 							<article id="exhibits">
 								<h2 class="major">exhibits</h2>
+
+								<h3><a href="#research">Click here to learn more about my research paper!</a></h3>
 								
 								<h3>ISC2 NJ Chapter: Capture the Flag for Novices 2025</h3>
 								<img src="images/CTF.jpg" alt="" style="margin-top: 0; display: block; width: 100%; height: auto;" />
@@ -121,6 +123,55 @@
 
 							<h3>Check out my <a href="https://github.com/Greenest-Guy">GitHub</a> for my full project portfolio!</h3>
 							</article>
+							
+							<script>
+								window.MathJax = {
+									tex: {
+										inlineMath: [['$', '$'], ['\\(', '\\)']]
+									}
+								};
+							</script>
+							<script id="MathJax-script" async 
+								src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+							</script>
+							<style>
+								.math-container {
+									text-align: center;
+									margin: 20px 0;
+								}
+							</style>
+
+							<article id="research">
+								<h2>Quantifying the Degradation of Human Decision-Making Under Time Pressure Through the Self-Information of Chess</h2>
+								<a href="https://doi.org/10.5281/zenodo.18664813"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.18664813.svg" alt="DOI"></a>
+
+								<a href="https://doi.org/10.5281/zenodo.18664813">Read the PDF here!</a>
+								<h3>Abstract</h3>
+								<p style="text-indent: 2em;">
+									Though it is well established that time pressure has detrimental effects on human cognition, its relative effects across different levels of competency remain largely unquantified. To address this gap, we extend Claude Shannon's work in information theory to the game of chess. To quantify the quality of human decision-making in a chess game, we calculate the probability of all legal moves in a given position from engine evaluations using a softmax function. Then, we sum the Shannon information of each played move in a single game to obtain the game's total surprisal. By applying this framework to a large dataset of chess games from the lichess.org Open Database, our results show that time pressure does not affect individuals of different skill levels uniformly. Highly skilled players effectively utilize additional time to improve decision quality, decreasing surprisal, whereas less skilled players exhibit poor baseline decision quality, high surprisal, which does not improve with additional time. These findings highlight the importance of distinguishing between skill-based and time-based limiting factors in any cognitive performance-based context, such as timed test-taking.
+								</p>
+
+								<h3>PGN Database Extractor</h3>
+								<p style="text-indent: 2em;">
+									Engineered an optimized PGN database extractor in Go to parse a 29.9GB database containing 91,549,148 chess games, sorting them into separate CSV files based on time control and skill group, while filtering games by ply (game length) and Elo difference.
+								</p>
+
+								<h3>Chess Surprisal Framework</h3>
+								<p style="text-indent: 2em;">
+										Developed a Python program to calculate the surprisal of 22,500 chess games using a custom softmax function to create probability distributions of all legal chess moves in each position from Stockfish 17.1 (Linux x64, AVX2) chess engine evaluations, finally implementing Claude Shannon’s theory of information to quantify move surprisal in bits.
+								</p>
+
+								<div class="math-container">
+									$$p_i=\frac{e^{E_i/\Delta_0}}{\sum_{x\in L}e^{E_x/\Delta_0}}$$
+								</div>
+
+								<div class="math-container">
+									$$C = \sum_{i=1}^{n}  -\log_2(p_i)$$
+								</div>
+
+								<p>Greene, C. J. (2026). Quantifying the Degradation of Human Decision-Making Under Time Pressure Through the Self-Information of Chess. Zenodo. https://doi.org/10.5281/zenodo.18664813</p>
+
+								</article>
 
 						<!-- Contact -->
 							<article id="contact">
