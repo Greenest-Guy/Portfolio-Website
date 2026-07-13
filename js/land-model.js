@@ -1,15 +1,12 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 
 (function () {
   "use strict";
 
   var container = document.getElementById("landModel");
   if (!container) return;
-
-  var scene = new THREE.Scene();
 
   var camera = new THREE.PerspectiveCamera(
     40,
@@ -22,11 +19,12 @@ import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
   container.appendChild(renderer.domElement);
 
-  var pmrem = new THREE.PMREMGenerator(renderer);
-  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-  pmrem.dispose();
+  // ambient light (loads faster)
+  var scene = new THREE.Scene();
+  scene.add(new THREE.AmbientLight(0xffffff, 4));
 
   var controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;   // inertia
@@ -45,7 +43,7 @@ import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
     scene.add(model);
 
     var fitDist =
-      (sphere.radius / Math.sin((camera.fov * Math.PI) / 360)) * 1.1;
+      (sphere.radius / Math.sin((camera.fov * Math.PI) / 360)); // multiply by factor to change size
 
     camera.position
       .set(0.55, 0.35, 1)          // three-quarter view

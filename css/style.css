@@ -624,13 +624,14 @@ footer {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.6rem;
-  max-width: 42rem;
 }
 
 .award-card {
   display: flex;
   align-items: baseline;
-  gap: 1rem;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 0.35rem;
   background: var(--bg-raised);
   border: 1px solid var(--border);
   border-left: 2px solid var(--accent);
@@ -643,7 +644,8 @@ footer {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text);
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: break-word;
   flex-shrink: 0;
 }
 
