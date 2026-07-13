@@ -112,6 +112,11 @@ a:focus-visible {
   transform: none;
 }
 
+/* remove header if it doesnt fit */
+@media (max-width: 640px) {
+  .site-header nav { display: none; }
+}
+
 /* --------------------------------------------------------------------------
    landing page
    -------------------------------------------------------------------------- */
