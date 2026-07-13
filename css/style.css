@@ -578,32 +578,6 @@ footer {
   font-size: 0.85rem;
 }
 
-/* Greene name hover*/
-.greene {
-    color: #bef9c0;
-    position: relative;
-    cursor: default;
-  }
-  .greene::after {
-    content: "#00FF00";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 6px;
-    padding: 2px 6px;
-    color: #bef9c0;
-    font: 0.7em monospace;
-    border-radius: 4px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.15s ease;
-  }
-  .greene:hover::after {
-    opacity: 1;
-  }
-
  /* --------------------------------------------------------------------------
    awards
    -------------------------------------------------------------------------- */
