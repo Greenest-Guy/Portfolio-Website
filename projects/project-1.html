@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project One — Caleb Greene</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header always-on">
+    <div class="inner">
+      <span class="brand">Caleb <span style="color: #bef9c0;">Greene</span></span>
+      <nav aria-label="Primary">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#tech stack">Tech Stack</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#competitions">Competitions</a>
+        <a href="../index.html#awards">Awards</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="subpage">
+      <a href="../index.html#projects" class="back">&larr; back to projects</a>
+
+      <h1>Greene, C. J. (2026). Quantifying the Degradation of Human Decision-Making Under Time Pressure Through the Self-Information of Chess</h1>
+
+      <div class="primary-image">
+        <img src="../assets/chess.png" alt=""/>
+      </div>
+
+      <section>
+        <h2>Tools Used</h2>
+        <div class="badge-grid">
+          <img src="https://img.shields.io/badge/python-e0e0e0?style=for-the-badge&logo=python&logoColor=121212" alt="Python" />
+          <img src="https://img.shields.io/badge/golang-e0e0e0?style=for-the-badge&logo=go&logoColor=121212" alt="Golang" />
+          <img src="https://img.shields.io/badge/latex-e0e0e0?style=for-the-badge&logo=latex&logoColor=121212" alt="LaTeX" />
+          <img src="https://img.shields.io/badge/linux-e0e0e0?style=for-the-badge&logo=linux&logoColor=121212" alt="Linux" />
+        </div>
+      </section>
+
+      <section>
+        <h2>Abstract</h2>
+        <div class="description">
+          <p>
+            Though it is well established that time pressure has detrimental effects on human cognition, its relative effects across different levels of competency remain largely unquantified. To address this gap, we extend Claude Shannon's work in information theory to the game of chess. To quantify the quality of human decision-making in a chess game, we calculate the probability of all legal moves in a given position from engine evaluations using a softmax function. Then, we sum the Shannon information of each played move in a single game to obtain the game's total surprisal. By applying this framework to a large dataset of 22,500 chess games from the lichess.org Open Database, our results show that time pressure does not affect individuals of different skill levels uniformly. Highly skilled players effectively utilize additional time to improve decision quality, decreasing surprisal, whereas less skilled players exhibit poor baseline decision quality, high surprisal, which does not improve with additional time. These findings highlight the importance of distinguishing between skill-based and time-based limiting factors in any cognitive performance-based context, such as timed test-taking.
+          </p>
+        </div>
+      </section>
+      
+      <!-- render LaTeX -->
+      <script>
+              window.MathJax = {
+                tex: {
+                  inlineMath: [['$', '$'], ['\\(', '\\)']]
+                }
+              };
+      </script>
+
+      <script id="MathJax-script" async 
+								src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+							</script>
+							<style>
+								.math-container {
+									text-align: center;
+									margin: 20px 0;
+								}
+			</style>
+
+      <section>
+        <h2>PGN Database Extractor</h2>
+        <p>
+          Engineered an optimized PGN database extractor in Go to parse a 29.9GB database containing 91,549,148 chess games, sorting them into separate CSV files based on time control and skill group, while filtering games by ply (game length) and Elo difference.
+        </p>
+      </section>
+
+      <section>
+        <h2>Chess Surprisal</h2>
+        <p>
+            Developed a Python program to calculate the surprisal of 22,500 chess games using a custom softmax function to create probability distributions of all legal chess moves in each position from Stockfish 17.1 (Linux x64, AVX2) chess engine evaluations, finally implementing Claude Shannon’s theory of information to quantify move surprisal in bits.
+        </p>
+      </section>
+
+      <section>
+        <h2>Mathematical Framework</h2>
+          <div class="math-container">
+                      $$p_i=\frac{e^{E_i/\Delta_0}}{\sum_{x\in L}e^{E_x/\Delta_0}}$$
+          </div>
+
+          <p>
+                      A softmax function calculates the probability of a move from a set of all legal moves $L$ in a position, where $E_i$ is the evaluation $E$ of the played move, and $E_x$ is the evaluation $E$ of the move $x$ in the set $L$.
+          </p>
+
+          <div class="math-container">
+									$$C = \sum_{i=1}^{n}  -\log_2(p_i)$$
+					</div>
+
+          <p>
+            The total surprisal $C$ of a game can be expressed as the summation of the self-information of each move, where the upper limit $n$ represents the total number of plies in the game, such that:
+          </p>
+
+          <div class="math-container">
+            $$\bar{C}_\text{per move} = \frac{1}{N} \sum_{i=1}^{N} \frac{C_i}{n_i}$$
+          </div>
+
+          <p>
+            To calculate the average surprisal $\bar{C}$ per move across all games in a given time control, let $N$ represent the total number of games, $C_i$ represent the total information of game $i$, and $n_i$ represent the total number of plies in game $i$. The average surprisal per move is then:
+          </p>
+      </section>
+
+      <section>
+        <h2>Research Paper</h2>
+        <a class="repo-link" href="https://doi.org/10.5281/zenodo.18664813" target="_blank" rel="noopener">Read Paper &rarr;</a>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year">2026</span> Caleb Greene</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
