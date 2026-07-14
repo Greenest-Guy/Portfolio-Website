@@ -25,6 +25,7 @@ body {
 
 html, body {
   overflow-x: hidden;
+  scrollbar-width: none; /* bye bye scroll bar */
 }
 
 ::selection { background: var(--accent); color: #121212; }
@@ -160,7 +161,7 @@ a:focus-visible {
   font-size: clamp(3rem, 4vw, 2.4rem);
   font-weight: 600;
   letter-spacing: 0.02em;
-  line-height: .5;
+  line-height: .75;
   color: var(--text);
 }
 
@@ -646,7 +647,7 @@ footer {
   color: var(--text);
   white-space: normal;
   overflow-wrap: break-word;
-  flex-shrink: 0;
+  flex-shrink: 0
 }
 
 .award-card .award-desc {
@@ -656,13 +657,13 @@ footer {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .award-card .award-from {
   font-size: 0.8rem;
   color: var(--text-dim);
   letter-spacing: 0.04em;
-  white-space: nowrap;
-  flex-shrink: 0;
+  white-space: normal;
+  min-width: 0
 }
