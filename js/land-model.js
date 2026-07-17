@@ -46,7 +46,7 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
       (sphere.radius / Math.sin((camera.fov * Math.PI) / 360)); // multiply by factor to change size
 
     camera.position
-      .set(0.55, 0.35, 1)          // three-quarter view
+      .set(0.55, 0.35, 1)          // three-quarter view (it works ok)
       .normalize()
       .multiplyScalar(fitDist);
     camera.near = fitDist / 100;

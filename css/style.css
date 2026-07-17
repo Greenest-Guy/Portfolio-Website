@@ -305,12 +305,6 @@ main {
   transition: border-color 180ms ease, transform 180ms ease;
 }
 
-.project-card:hover,
-.project-card:focus-within {
-  border-color: var(--accent);
-  transform: translateY(-3px);
-}
-
 .thumb {
   aspect-ratio: 16 / 9;
   background: var(--bg);
@@ -352,6 +346,10 @@ main {
 /* --------------------------------------------------------------------------
    competitions
    -------------------------------------------------------------------------- */
+.competition-grid {
+  display: grid;
+  gap: 1.25rem;
+}
 
 .competition-card {
   display: flex;
