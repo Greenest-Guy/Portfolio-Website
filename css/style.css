@@ -615,7 +615,7 @@ footer {
   font-size: 0.85rem;
 }
 
- /* --------------------------------------------------------------------------
+/* --------------------------------------------------------------------------
    awards
    -------------------------------------------------------------------------- */
 
@@ -626,42 +626,54 @@ footer {
 }
 
 .award-card {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: baseline;
-  flex-wrap: wrap;
   column-gap: 1rem;
-  row-gap: 0.35rem;
+  row-gap: 0.4rem;
   background: var(--bg-raised);
   border: 1px solid var(--border);
   border-left: 2px solid var(--accent);
   border-radius: 3px;
-  padding: 0.6rem 1rem;
+  padding: 0.7rem 1rem;
   transition: border-color 180ms ease;
 }
 
 .award-card h3 {
+  grid-column: 1;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text);
-  white-space: normal;
   overflow-wrap: break-word;
-  flex-shrink: 0
-}
-
-.award-card .award-desc {
-  font-size: 0.85rem;
-  color: var(--text-dim);
-  flex: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
 }
 
 .award-card .award-from {
+  grid-column: 2;
+  text-align: right;
   font-size: 0.8rem;
   color: var(--text-dim);
   letter-spacing: 0.04em;
-  white-space: normal;
-  min-width: 0
+  white-space: nowrap;
+}
+
+.award-card .award-desc {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+
+.award-card .award-desc:empty {
+  display: none;
+}
+
+@media (max-width: 520px) {
+  .award-card {
+    grid-template-columns: 1fr;
+  }
+
+  .award-card .award-from {
+    grid-column: 1;
+    text-align: left;
+  }
 }
