@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Caleb Greene's Cybersecurity & Research Portfolio Website" />
   <title>Research | Caleb Greene</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +19,7 @@
         <a href="../index.html#about">About</a>
         <a href="../index.html#experience">Experience</a>
         <a href="../index.html#education">Education</a>
-        <a href="../index.html#tech stack">Tech Stack</a>
+        <a href="../index.html#tech-stack">Tech Stack</a>
         <a href="../index.html#projects">Projects</a>
         <a href="../index.html#competitions">Competitions</a>
         <a href="../index.html#awards">Awards</a>
@@ -34,7 +35,7 @@
       <h1>Greene, C. J. (2026). Quantifying the Degradation of Human Decision-Making Under Time Pressure Through the Self-Information of Chess</h1>
 
       <div class="primary-image">
-        <img src="../assets/chess.png" alt=""/>
+        <img src="../assets/chess.png" alt="A photo of one of the pages in the research paper"/>
       </div>
 
       <section>
@@ -99,12 +100,16 @@
 
       <section>
         <h2>Mathematical Framework</h2>
+          <p>
+                      A softmax function calculates the probability of a move from a set of all legal moves $L$ in a position, where $E_i$ is the evaluation $E$ of the played move, and $E_x$ is the evaluation $E$ of the move $x$ in the set $L$:
+          </p>
+
           <div class="math-container">
                       $$p_i=\frac{e^{E_i/\Delta_0}}{\sum_{x\in L}e^{E_x/\Delta_0}}$$
           </div>
 
           <p>
-                      A softmax function calculates the probability of a move from a set of all legal moves $L$ in a position, where $E_i$ is the evaluation $E$ of the played move, and $E_x$ is the evaluation $E$ of the move $x$ in the set $L$.
+            The total surprisal $C$ of a game can be expressed as the summation of the self-information of each move, where the upper limit $n$ represents the total number of plies in the game, such that:
           </p>
 
           <div class="math-container">
@@ -112,16 +117,12 @@
 					</div>
 
           <p>
-            The total surprisal $C$ of a game can be expressed as the summation of the self-information of each move, where the upper limit $n$ represents the total number of plies in the game, such that:
+            To calculate the average surprisal $\bar{C}$ per move across all games in a given time control, let $N$ represent the total number of games, $C_i$ represent the total information of game $i$, and $n_i$ represent the total number of plies in game $i$. The average surprisal per move is then:
           </p>
 
           <div class="math-container">
             $$\bar{C}_\text{per move} = \frac{1}{N} \sum_{i=1}^{N} \frac{C_i}{n_i}$$
           </div>
-
-          <p>
-            To calculate the average surprisal $\bar{C}$ per move across all games in a given time control, let $N$ represent the total number of games, $C_i$ represent the total information of game $i$, and $n_i$ represent the total number of plies in game $i$. The average surprisal per move is then:
-          </p>
       </section>
 
       <section>
