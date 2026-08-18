@@ -1,10 +1,10 @@
 :root {
-  --bg:          #121212;
-  --bg-raised:   #191919;
-  --border:      #2a2a2a;
-  --text:        #e0e0e0;
-  --text-dim:    #8a8a8a;
-  --accent:      #bef9c0;
+  --bg:          #101010;
+  --header-card:   #171717;
+  --border:      #2b2b2b;
+  --text:        #e1e1e1;
+  --subtext:    #8a8a8a;
+  --accent:      #aaffaa;
   --mono: "Fira Code", ui-monospace, "SF Mono", "Roboto Mono",
           Menlo, Consolas, monospace;
 }
@@ -62,7 +62,7 @@ a:focus-visible {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 20;
-  background: var(--bg-raised);
+  background: var(--header-card);
   border-bottom: 1px solid var(--border);
   opacity: 0;
   pointer-events: none;
@@ -100,7 +100,7 @@ a:focus-visible {
 
 .site-header nav a {
   font-size: 0.8rem;
-  color: var(--text-dim);
+  color: var(--subtext);
 }
 
 .site-header nav a:hover,
@@ -256,7 +256,7 @@ main {
 }
 
 .about-text p { color: var(--text); }
-.about-text .dim { color: var(--text-dim); font-size: 0.9rem; }
+.about-text .dim { color: var(--subtext); font-size: 0.9rem; }
 
 /* --------------------------------------------------------------------------
    skills
@@ -268,7 +268,7 @@ main {
 .skills-group h3 {
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--text-dim);
+  color: var(--subtext);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -298,7 +298,7 @@ main {
 .project-card {
   display: flex;
   flex-direction: column;
-  background: var(--bg-raised);
+  background: var(--header-card);
   border: 1px solid var(--border);
   border-radius: 3px;
   overflow: hidden;
@@ -312,7 +312,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-dim);
+  color: var(--subtext);
   font-size: 0.75rem;
   letter-spacing: 0.15em;
 }
@@ -329,7 +329,7 @@ main {
 
 .project-card p {
   font-size: 0.85rem;
-  color: var(--text-dim);
+  color: var(--subtext);
   flex: 1;
 }
 
@@ -354,7 +354,7 @@ main {
 .competition-card {
   display: flex;
   flex-direction: row;
-  background: var(--bg-raised);
+  background: var(--header-card);
   border: 1px solid var(--border);
   border-radius: 3px;
   overflow: hidden;
@@ -370,7 +370,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-dim);
+  color: var(--subtext);
   font-size: 0.75rem;
   letter-spacing: 0.15em;
 }
@@ -389,7 +389,7 @@ main {
 
 .competition-card p {
   font-size: 0.85rem;
-  color: var(--text-dim);
+  color: var(--subtext);
   flex: 1;
 }
 
@@ -429,7 +429,7 @@ footer {
   text-align: center;
   padding: 1.75rem 1.5rem;
   font-size: 0.75rem;
-  color: var(--text-dim);
+  color: var(--subtext);
 }
 
 /* --------------------------------------------------------------------------
@@ -444,7 +444,7 @@ footer {
 
 .subpage .back {
   font-size: 0.8rem;
-  color: var(--text-dim);
+  color: var(--subtext);
 }
 
 .subpage h1 {
@@ -464,13 +464,13 @@ footer {
 
 .primary-image {
   aspect-ratio: 16 / 8;
-  background: var(--bg-raised);
+  background: var(--header-card);
   border: 1px solid var(--border);
   border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-dim);
+  color: var(--subtext);
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   margin-bottom: 2.5rem;
@@ -485,7 +485,7 @@ footer {
 .subpage h2 {
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--text-dim);
+  color: var(--subtext);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -595,7 +595,7 @@ footer {
 
 .edu-line__right {
   text-align: right;
-  color: var(--text-dim);
+  color: var(--subtext);
   white-space: nowrap;
   flex-shrink: 0;
   font-size: 0.85rem;
@@ -611,7 +611,7 @@ footer {
 }
 
 .edu-line--secondary .edu-line__left {
-  color: var(--text-dim);
+  color: var(--subtext);
   font-size: 0.85rem;
 }
 
@@ -631,7 +631,7 @@ footer {
   align-items: baseline;
   column-gap: 1rem;
   row-gap: 0.4rem;
-  background: var(--bg-raised);
+  background: var(--header-card);
   border: 1px solid var(--border);
   border-left: 2px solid var(--accent);
   border-radius: 3px;
@@ -651,7 +651,7 @@ footer {
   grid-column: 2;
   text-align: right;
   font-size: 0.8rem;
-  color: var(--text-dim);
+  color: var(--subtext);
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
@@ -660,7 +660,7 @@ footer {
   grid-column: 1 / -1;
   font-size: 0.85rem;
   line-height: 1.5;
-  color: var(--text-dim);
+  color: var(--subtext);
 }
 
 .award-card .award-desc:empty {
