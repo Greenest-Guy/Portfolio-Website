@@ -181,20 +181,6 @@ a:focus-visible {
 
 .land-model canvas { display: block; }
 
-.resume-btn {
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  color: var(--text);
-  padding: 0.6rem 1.25rem;
-  border: 1px solid var(--text);
-
-  background: rgba(16, 16, 16, 0);
-  transition: color 0.2s, background 0.2s;
-}
-
-.resume-btn:hover,
-.resume-btn:focus-visible { color: var(--bg); background: var(--text); }
-
 .scroll-cue {
   position: absolute;
   z-index: 1;
